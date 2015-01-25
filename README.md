@@ -2,7 +2,7 @@
 
 > Upload csv data to sugar crm 6.5 CE
 
-DISCLAIMER: This plugin is just for testing purposes and is probably not production ready. So warranty for anything ;-).
+DISCLAIMER: This plugin is just for testing purposes and is probably not production ready. So NO warranty for anything ;-).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
