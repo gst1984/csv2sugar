@@ -51,9 +51,5 @@ You can create or update rows in the regular sugar modules (Accounts, Contacts,.
 If the csv contains and id column, an existing row is updated, if not a new row is created.
 The column header of the csv has to have the same naming (in lowercase) as SugarCRM.
 
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_
+If you name a field like link.linkfieldname, where "link." is a keyword, a relationship to the field "linkfieldname" will be created.
+The value must be the id of the related entity.

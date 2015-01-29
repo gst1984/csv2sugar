@@ -30,13 +30,17 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     csv2sugar : {
-		options : {
-			apiURL:  "http://{sugarurl}/service/v4_1/rest.php",
-			login:   "****",
-			passwd:  "****",
-			module: "Accounts",
+		showcase: {
+			options : {
+				apiURL:  "http://{sugarurl}/service/v4_1/rest.php",
+				login:   "****",
+				passwd:  "****",
+				module: "Accounts",
+			},
+			src : ['test.csv']
 		},
-		src : ['test.csv']
+		
+		
 	},
 
     // Unit tests.

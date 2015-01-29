@@ -56,16 +56,44 @@ function syncSugarBean(sessionID, module, datarow, lastline, done){
 			,name_value_list : []
 		};
 		
+		var links = [];
+		
 		//add data to name_value_list
 		for (key in datarow) {
-			params.name_value_list.push({"name" : key, "value" : datarow[key]});
+			var n = key.indexOf("link.");
+			if(n===-1){
+				params.name_value_list.push({"name" : key, "value" : datarow[key]});
+			}
+			else {
+				console.log(n);
+				links.push({field : key.substr(n+5), value : datarow[key] });
+			}
 		}
-		
+		console.log(links);
 		
 		sugar.call("set_entry", params, function(res,err){
 			console.log(res,err);
-			if(lastline){
-				done(true);
+			if(links.length>0){// set links
+				for (link in links){
+					linkparams = {
+						 session:  sessionID
+						,module_name : module
+						,module_id : res.id 
+						,link_field_name : links[link].field
+						,related_ids : [links[link].value]  // some contacts ID
+					 };
+					sugar.call("set_relationship", linkparams, function(res,err){
+						if(lastline){
+							done(true);
+						}
+						console.log(res, err);
+					});
+				}
+			}	
+			else {
+				if(lastline){
+					done(true);
+				}
 			}
 		});
 }
