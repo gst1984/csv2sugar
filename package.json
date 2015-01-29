@@ -1,7 +1,7 @@
 {
   "name": "csv2sugar",
   "description": "Upload csv data to sugar crm 6.5 CE",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/gst1984/csv2sugar",
   "author": {
     "name": "Gerald Stockinger",
